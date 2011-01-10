@@ -15,7 +15,7 @@
 #the account settings page within GitHub. Then you should be able to access
 #the GitHub repository within RStudio using the following command:
 
-!git clone git@github.com:holschun/Spatially_Weighted_Regression.git
+!git clone https://holschun@github.com/holschun/Spatially_Weighted_Regression.git
 
 #Then the standard GitHub commands can be used to check out code,
 #but each command must be prefaced with an "!". For example, if your working
