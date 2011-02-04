@@ -37,10 +37,10 @@ for(q in 1:length(m1))		#Selects a spatial variation
 
 				#This stores each iteration's K values and the parameters used. The 
 				#values in the [] just define which list item each step of the loop
-				#needs to populate to. Also, I am not sure if K is the vector of selected bandwiths
-				# from knn_singleton, so you should chage that to whatever it should be.
+				#needs to populate to. Also, I am not sure if K is the vector of selected bandwidths
+				# from knn_singleton, so you should change that to whatever it should be.
 			}
 		}
 	}
 
-save.image("knn_simulation_x_z")
+save.image("knn_simulation_x_z.Rdata")
