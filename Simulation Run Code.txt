@@ -42,3 +42,5 @@ for(q in 1:length(m1))		#Selects a spatial variation
 			}
 		}
 	}
+
+save.image("knn_simulation_x_z")
