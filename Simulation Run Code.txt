@@ -1,0 +1,46 @@
+#########################################
+#					#
+#	 Simulation Set-Up Code		#
+#					#
+#########################################
+
+#################################
+# Define Parameters of Interest #
+#################################
+
+#These are just arbitrary numbers filled in below. Insert the ones you think are important to Run
+
+
+m1=c(0,1,2,3,4,5,6,7,8,...)	#Used in Defining DGP1
+eselect=c(0,1,2,3,4,5,6,7,8,...)	#Error Term
+loopset=1000			#Loops in knn_singleton
+houses=100			#n in knn_singleton
+
+
+Kresults=list()			#list that will store the calculated K for each loop for each combination of m1+e
+RunParameters=list()		#list that will store the parameters used for each run
+
+
+for(q in 1:length(m1))		#Selects a spatial variation
+	{
+	for(w in 1:length(eselect))	#For all spatial Variatioins tests each error possibility
+		{
+		for(y in c(0,1))		#For each spatial variation and each error, tests correctly and misspecified models
+			{	
+			knn_singleton(n=houses,loops=loopset,e=eselect[w],dgp1=(m1[q]/4+1-m1[q]*4),dgp2=1,inc1=1,inc2=y) #run simulation
+
+				# My variables defined might not be correct (especially dgp1). 
+				# You should check to make sure I indluded everything
+
+			Kresult[((q-1)*length(eselect)+(w-1)*2+y+1)]=K
+			RunParemeters[((q-1)*length(eselect)+(w-1)*2+y+1)]=c(m1,e,inc2,loopset,houses)
+
+				#This stores each iteration's K values and the parameters used. The 
+				#values in the [] just define which list item each step of the loop
+				#needs to populate to. Also, I am not sure if K is the vector of selected bandwidths
+				# from knn_singleton, so you should change that to whatever it should be.
+			}
+		}
+	}
+
+save.image("knn_simulation_x_z.Rdata")
