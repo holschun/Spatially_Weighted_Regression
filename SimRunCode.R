@@ -3,7 +3,7 @@
 #	 Simulation Set-Up Code		#
 #					#
 #########################################
-
+# just a test
 # Set the working directory to the SWR folder
   setwd("/Users/aswoboda/Documents/Research/LWR_MonteCarloSims/Spatially_Weighted_Regression/")
 # source the requisite R functions
