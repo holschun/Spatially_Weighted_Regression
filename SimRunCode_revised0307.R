@@ -47,7 +47,7 @@ for(q in 1:length(m1))		#Selects a spatial variation
   				#values in the [] just define which list item each step of the loop
   				#needs to populate to. Also, I am not sure if K is the vector of selected bandwidths
   				# from knn_singleton, so you should change that to whatever it should be.
-			filename = paste("LSV_m1_m2", springf("%04d", m1[q] * 1000), springf("%04d", m2[p] * 1000), "_e", eselect[w], "v", ".Rdata", sep="")
+			filename = paste("LSV_m1_m2", sprintf("%04d", m1[q] * 1000), sprintf("%04d", m2[p] * 1000), "_e", eselect[w], "v", ".Rdata", sep="")
 			save.image(filename)
 
                   }
